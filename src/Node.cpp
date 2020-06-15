@@ -88,7 +88,7 @@ char* Node::getlocation()
 
 //##SensorNode definitions
 
-SensorNode::SensorNode() {
+SensorNode::SensorNode(const char* firmwareVersion, const char* misc, const char* sensorType, const char* serial, const char* uniqueIdentifier):Node(firmwareVersion, misc, sensorType, serial, uniqueIdentifier) {
 	sensorVal = -1;
 	sensorThreshold = -1;
 
@@ -102,7 +102,7 @@ int SensorNode::relayMessage() {
 
 //##GatewayNode definitions
 
-GatewayNode::GatewayNode() {
+GatewayNode::GatewayNode(const char* firmwareVersion, const char* misc, const char* sensorType, const char* serial, const char* uniqueIdentifier):Node(firmwareVersion, misc, sensorType, serial, uniqueIdentifier) {
 	WiFirxbuffer = (char*)calloc(WiFiblockCount, WiFiblockSize);
 	WiFitxbuffer = (char*)calloc(WiFiblockCount, WiFiblockSize);
 }

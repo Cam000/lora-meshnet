@@ -9,13 +9,16 @@ int main()
     //create the mesh network
     MeshNetwork* meshnet = new MeshNetwork;
     //create a node
-    Node* node = new Node("1", "2", "3", "4", "5");
+    GatewayNode* node = new GatewayNode("1", "2", "3", "4", "5");
+    SensorNode* node1 = new SensorNode("11", "22", "33", "44", "55");
+    SensorNode* node2 = new SensorNode("111", "222", "333", "444", "555");
     //add a node to the network
-    meshnet->addNode(node);
+    int numberOfNodes;
+    numberOfNodes = meshnet->addNode(node);
+    numberOfNodes = meshnet->addNode(node1);
+    numberOfNodes = meshnet->addNode(node2);
 
-
-    printf("node attributes: %s %s %s %s %s", node->getfirmwareVersion(), node->getlocation(), node->getsensorType(), node->getserial(), node->getUniqueIdentifier());
-    //factory pattern?
+    meshnet->visualizeNetwork(numberOfNodes);
 
 
     return 0;

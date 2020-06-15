@@ -40,9 +40,9 @@ private:
     
 };
 
-class SensorNode : Node {
+class SensorNode : public Node {
 public:
-    SensorNode();
+    SensorNode(const char* firmwareVersion, const char* misc, const char* sensorType, const char* serial, const char* uniqueIdentifier);
     int relayMessage();
 
 private:
@@ -50,9 +50,9 @@ private:
     uint16_t sensorThreshold;
 };
 
-class GatewayNode : Node {
+class GatewayNode : public Node {
 public:
-    GatewayNode();
+    GatewayNode(const char* firmwareVersion, const char* misc, const char* sensorType, const char* serial, const char* uniqueIdentifier);
     ~GatewayNode();
     int bridgeToWiFi();
     int bridgeToEthernet();
