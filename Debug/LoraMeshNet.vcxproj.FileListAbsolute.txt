@@ -1,0 +1,2 @@
+C:\Users\Cam\source\repos\LoraMeshNet\Debug\LoraMeshNet.exe
+C:\Users\Cam\source\repos\LoraMeshNet\Debug\LoraMeshNet.pdb
